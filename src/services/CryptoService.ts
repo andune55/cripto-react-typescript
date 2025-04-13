@@ -6,7 +6,7 @@ export async function getCryptos(){
     const {data: {Data}} = await axios(url)
     console.log(Data)
     const result = CryptoCurrenciesResponseSchema.safeParse(Data)
-    //console.log(result)
+    console.log(result)
     if(result.success){
         return result.data
     }
