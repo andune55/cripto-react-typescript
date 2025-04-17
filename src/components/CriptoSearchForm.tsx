@@ -30,7 +30,6 @@ export default function CriptoSearchForm() {
         fetchData(pair)
     }
 
-
     return (
         <form 
             className="form" 

@@ -7,31 +7,16 @@ export async function getCryptos(){
     const {data: {Data}} = await axios(url)
     console.log(Data)  
     const result = CryptoCurrenciesResponseSchema.safeParse(Data)
-    //const result2 = CryptoCurrencyResponseDisplaySchema.safeParse(Data)
     console.log(result)
-    //console.log(result2)
     if(result.success){
         return result.data
     }   
 }
 
-// const searchFromApi = async (query: string) => {
-//     return axios.get("/api/search", {
-//         params: query,
-//     });
-// };
-// console.log(searchFromApi)
-
-
 export async function fetchCurrentCryptoPrice(pair: Pair) {
     //console.log(pair)
     //const url = `http://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=EUR`    
     const url = `http://min-api.cryptocompare.com/data/pricemultifull?fsyms=${pair.criptocurrency}&tsyms=${pair.currency}`
-    
-    // const { data } = await axios.get(url,{
-    //     params: pair 
-    // })
-
     // const { data } = await axios(url)
     // console.log(data) 
 
@@ -42,8 +27,5 @@ export async function fetchCurrentCryptoPrice(pair: Pair) {
     if(result.success){
         //console.log(result.data)
         return(result.data)
-    }
-
-
-    
+    }    
 }
