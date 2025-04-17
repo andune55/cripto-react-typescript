@@ -5,9 +5,9 @@ import { Pair } from '../types'
 export async function getCryptos(){
     const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=EUR'
     const {data: {Data}} = await axios(url)
-    console.log(Data)  
+    //console.log(Data)  
     const result = CryptoCurrenciesResponseSchema.safeParse(Data)
-    console.log(result)
+    //console.log(result)
     if(result.success){
         return result.data
     }   
